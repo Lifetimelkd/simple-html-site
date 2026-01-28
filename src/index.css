@@ -144,36 +144,60 @@ All colors MUST be HSL.
     background-clip: text;
   }
 
-  .card-gradient-1 {
-    background: linear-gradient(135deg, hsl(var(--rainbow-purple)), hsl(var(--rainbow-blue)));
+  /* Billiard ball colors - Solid balls (1-7) */
+  .ball-1 { background: hsl(48 100% 50%); } /* Yellow */
+  .ball-2 { background: hsl(220 90% 45%); } /* Blue */
+  .ball-3 { background: hsl(0 85% 50%); } /* Red */
+  .ball-4 { background: hsl(270 70% 45%); } /* Purple */
+  .ball-5 { background: hsl(25 100% 50%); } /* Orange */
+  .ball-6 { background: hsl(140 70% 35%); } /* Green */
+  .ball-7 { background: hsl(25 60% 30%); } /* Brown/Maroon */
+  
+  /* 8 ball - Black */
+  .ball-8 { background: hsl(0 0% 10%); }
+  
+  /* Stripe balls (9-15) - with white stripe */
+  .ball-9 { 
+    background: linear-gradient(to bottom, 
+      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+      hsl(48 100% 50%) 25%, hsl(48 100% 50%) 75%, 
+      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
   }
-
-  .card-gradient-2 {
-    background: linear-gradient(135deg, hsl(var(--rainbow-blue)), hsl(var(--rainbow-cyan)));
+  .ball-10 { 
+    background: linear-gradient(to bottom, 
+      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+      hsl(220 90% 45%) 25%, hsl(220 90% 45%) 75%, 
+      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
   }
-
-  .card-gradient-3 {
-    background: linear-gradient(135deg, hsl(var(--rainbow-cyan)), hsl(var(--rainbow-green)));
+  .ball-11 { 
+    background: linear-gradient(to bottom, 
+      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+      hsl(0 85% 50%) 25%, hsl(0 85% 50%) 75%, 
+      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
   }
-
-  .card-gradient-4 {
-    background: linear-gradient(135deg, hsl(var(--rainbow-green)), hsl(var(--rainbow-yellow)));
+  .ball-12 { 
+    background: linear-gradient(to bottom, 
+      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+      hsl(270 70% 45%) 25%, hsl(270 70% 45%) 75%, 
+      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
   }
-
-  .card-gradient-5 {
-    background: linear-gradient(135deg, hsl(var(--rainbow-yellow)), hsl(var(--rainbow-orange)));
+  .ball-13 { 
+    background: linear-gradient(to bottom, 
+      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+      hsl(25 100% 50%) 25%, hsl(25 100% 50%) 75%, 
+      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
   }
-
-  .card-gradient-6 {
-    background: linear-gradient(135deg, hsl(var(--rainbow-orange)), hsl(var(--rainbow-red)));
+  .ball-14 { 
+    background: linear-gradient(to bottom, 
+      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+      hsl(140 70% 35%) 25%, hsl(140 70% 35%) 75%, 
+      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
   }
-
-  .card-gradient-7 {
-    background: linear-gradient(135deg, hsl(var(--rainbow-red)), hsl(var(--rainbow-pink)));
-  }
-
-  .card-gradient-8 {
-    background: linear-gradient(135deg, hsl(var(--rainbow-pink)), hsl(var(--rainbow-purple)));
+  .ball-15 { 
+    background: linear-gradient(to bottom, 
+      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+      hsl(25 60% 30%) 25%, hsl(25 60% 30%) 75%, 
+      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
   }
 
   /* Long press shake animation */
