@@ -52,7 +52,7 @@ const NumberCard = ({ number, onRemove, delay = 0, isRemoving = false }: NumberC
   return (
     <div
       className={cn(
-        "relative w-16 h-20 md:w-20 md:h-24",
+        "relative w-14 h-18 sm:w-16 sm:h-20 md:w-20 md:h-24",
         "cursor-pointer select-none",
         "animate-[scale-in_0.5s_ease-out_forwards]",
         isRemoving && "animate-[fade-out_0.3s_ease-out_forwards]"
@@ -82,10 +82,10 @@ const NumberCard = ({ number, onRemove, delay = 0, isRemoving = false }: NumberC
         {/* Number with circle background for stripe balls */}
         <div className={cn(
           "flex items-center justify-center",
-          isStripeBall(number) && "w-10 h-10 md:w-12 md:h-12 rounded-full bg-white"
+          isStripeBall(number) && "w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white"
         )}>
           <span className={cn(
-            "text-2xl md:text-3xl font-bold drop-shadow-lg",
+            "text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-lg",
             isDarkBall(number) ? "text-white" : "text-gray-900",
             isStripeBall(number) && "text-gray-900 drop-shadow-none"
           )}>
@@ -132,14 +132,6 @@ const NumberCard = ({ number, onRemove, delay = 0, isRemoving = false }: NumberC
         </>
       )}
 
-      {/* Hint text */}
-      <div className={cn(
-        "absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap",
-        "text-xs text-muted-foreground opacity-0 transition-opacity",
-        isLongPressing && "opacity-100"
-      )}>
-        长按消除中...
-      </div>
     </div>
   );
 };
