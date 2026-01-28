@@ -8,22 +8,26 @@ interface NumberCardProps {
   isRemoving?: boolean;
 }
 
-const gradientClasses = [
-  "card-gradient-1",
-  "card-gradient-2",
-  "card-gradient-3",
-  "card-gradient-4",
-  "card-gradient-5",
-  "card-gradient-6",
-  "card-gradient-7",
-  "card-gradient-8",
-];
+// Get ball class based on number (1-15 billiard ball colors)
+const getBallClass = (number: number): string => {
+  return `ball-${number}`;
+};
+
+// Check if it's a stripe ball (9-15) for text color
+const isStripeBall = (number: number): boolean => {
+  return number >= 9 && number <= 15;
+};
+
+// Check if it's the 8 ball (black) for white text
+const isDarkBall = (number: number): boolean => {
+  return number === 8;
+};
 
 const NumberCard = ({ number, onRemove, delay = 0, isRemoving = false }: NumberCardProps) => {
   const [isLongPressing, setIsLongPressing] = useState(false);
   const [isShattering, setIsShattering] = useState(false);
   const longPressTimer = useRef<NodeJS.Timeout | null>(null);
-  const gradientIndex = (number - 1) % gradientClasses.length;
+  const ballClass = getBallClass(number);
 
   const handlePressStart = () => {
     setIsLongPressing(true);
@@ -67,7 +71,7 @@ const NumberCard = ({ number, onRemove, delay = 0, isRemoving = false }: NumberC
       <div
         className={cn(
           "absolute inset-0 rounded-xl",
-          gradientClasses[gradientIndex],
+          ballClass,
           "flex items-center justify-center",
           "shadow-lg transition-all duration-300",
           "hover:shadow-xl hover:scale-110 hover:-translate-y-1",
@@ -75,9 +79,20 @@ const NumberCard = ({ number, onRemove, delay = 0, isRemoving = false }: NumberC
           isShattering && "opacity-0"
         )}
       >
-        <span className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
-          {number}
-        </span>
+        {/* Number with circle background for stripe balls */}
+        <div className={cn(
+          "flex items-center justify-center",
+          isStripeBall(number) && "w-10 h-10 md:w-12 md:h-12 rounded-full bg-white"
+        )}>
+          <span className={cn(
+            "text-2xl md:text-3xl font-bold drop-shadow-lg",
+            isDarkBall(number) ? "text-white" : "text-gray-900",
+            isStripeBall(number) && "text-gray-900 drop-shadow-none"
+          )}>
+            {number}
+          </span>
+        </div>
+        
         {/* Shine effect */}
         <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
         
@@ -99,7 +114,7 @@ const NumberCard = ({ number, onRemove, delay = 0, isRemoving = false }: NumberC
               key={i}
               className={cn(
                 "absolute rounded-sm",
-                gradientClasses[gradientIndex],
+                ballClass,
                 "animate-shatter-piece"
               )}
               style={{
