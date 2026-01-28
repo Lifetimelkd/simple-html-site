@@ -144,61 +144,6 @@ All colors MUST be HSL.
     background-clip: text;
   }
 
-  /* Billiard ball colors - Solid balls (1-7) */
-  .ball-1 { background: hsl(48 100% 50%); } /* Yellow */
-  .ball-2 { background: hsl(220 90% 45%); } /* Blue */
-  .ball-3 { background: hsl(0 85% 50%); } /* Red */
-  .ball-4 { background: hsl(270 70% 45%); } /* Purple */
-  .ball-5 { background: hsl(25 100% 50%); } /* Orange */
-  .ball-6 { background: hsl(140 70% 35%); } /* Green */
-  .ball-7 { background: hsl(25 60% 30%); } /* Brown/Maroon */
-  
-  /* 8 ball - Black */
-  .ball-8 { background: hsl(0 0% 10%); }
-  
-  /* Stripe balls (9-15) - with white stripe */
-  .ball-9 { 
-    background: linear-gradient(to bottom, 
-      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
-      hsl(48 100% 50%) 25%, hsl(48 100% 50%) 75%, 
-      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
-  }
-  .ball-10 { 
-    background: linear-gradient(to bottom, 
-      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
-      hsl(220 90% 45%) 25%, hsl(220 90% 45%) 75%, 
-      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
-  }
-  .ball-11 { 
-    background: linear-gradient(to bottom, 
-      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
-      hsl(0 85% 50%) 25%, hsl(0 85% 50%) 75%, 
-      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
-  }
-  .ball-12 { 
-    background: linear-gradient(to bottom, 
-      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
-      hsl(270 70% 45%) 25%, hsl(270 70% 45%) 75%, 
-      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
-  }
-  .ball-13 { 
-    background: linear-gradient(to bottom, 
-      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
-      hsl(25 100% 50%) 25%, hsl(25 100% 50%) 75%, 
-      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
-  }
-  .ball-14 { 
-    background: linear-gradient(to bottom, 
-      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
-      hsl(140 70% 35%) 25%, hsl(140 70% 35%) 75%, 
-      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
-  }
-  .ball-15 { 
-    background: linear-gradient(to bottom, 
-      hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
-      hsl(25 60% 30%) 25%, hsl(25 60% 30%) 75%, 
-      hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%);
-  }
 
   /* Long press shake animation */
   .shake {
@@ -232,4 +177,61 @@ All colors MUST be HSL.
       transform: translate(var(--tx, 50px), var(--ty, -80px)) rotate(var(--r, 360deg)) scale(0.3);
     }
   }
+}
+
+/* Billiard ball colors - outside @layer to prevent purging */
+/* Solid balls (1-7) */
+.ball-1 { background: hsl(48 100% 50%) !important; } /* Yellow */
+.ball-2 { background: hsl(220 90% 45%) !important; } /* Blue */
+.ball-3 { background: hsl(0 85% 50%) !important; } /* Red */
+.ball-4 { background: hsl(270 70% 45%) !important; } /* Purple */
+.ball-5 { background: hsl(25 100% 50%) !important; } /* Orange */
+.ball-6 { background: hsl(140 70% 35%) !important; } /* Green */
+.ball-7 { background: hsl(25 60% 30%) !important; } /* Brown/Maroon */
+
+/* 8 ball - Black */
+.ball-8 { background: hsl(0 0% 10%) !important; }
+
+/* Stripe balls (9-15) - with white stripe */
+.ball-9 { 
+  background: linear-gradient(to bottom, 
+    hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+    hsl(48 100% 50%) 25%, hsl(48 100% 50%) 75%, 
+    hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%) !important;
+}
+.ball-10 { 
+  background: linear-gradient(to bottom, 
+    hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+    hsl(220 90% 45%) 25%, hsl(220 90% 45%) 75%, 
+    hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%) !important;
+}
+.ball-11 { 
+  background: linear-gradient(to bottom, 
+    hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+    hsl(0 85% 50%) 25%, hsl(0 85% 50%) 75%, 
+    hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%) !important;
+}
+.ball-12 { 
+  background: linear-gradient(to bottom, 
+    hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+    hsl(270 70% 45%) 25%, hsl(270 70% 45%) 75%, 
+    hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%) !important;
+}
+.ball-13 { 
+  background: linear-gradient(to bottom, 
+    hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+    hsl(25 100% 50%) 25%, hsl(25 100% 50%) 75%, 
+    hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%) !important;
+}
+.ball-14 { 
+  background: linear-gradient(to bottom, 
+    hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+    hsl(140 70% 35%) 25%, hsl(140 70% 35%) 75%, 
+    hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%) !important;
+}
+.ball-15 { 
+  background: linear-gradient(to bottom, 
+    hsl(0 0% 98%) 0%, hsl(0 0% 98%) 25%, 
+    hsl(25 60% 30%) 25%, hsl(25 60% 30%) 75%, 
+    hsl(0 0% 98%) 75%, hsl(0 0% 98%) 100%) !important;
 }
