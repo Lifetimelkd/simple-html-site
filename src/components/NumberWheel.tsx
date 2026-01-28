@@ -31,12 +31,12 @@ const NumberWheel = ({ isSpinning, onSpin, hasDrawn }: NumberWheelProps) => {
   return (
     <div className="relative flex items-center justify-center">
       {/* Outer glow ring */}
-      <div className="absolute w-[320px] h-[320px] md:w-[380px] md:h-[380px] rounded-full bg-gradient-to-r from-primary via-purple-400 to-pink-400 opacity-50 blur-xl animate-pulse" />
+      <div className="absolute w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[380px] md:h-[380px] rounded-full bg-gradient-to-r from-primary via-purple-400 to-pink-400 opacity-50 blur-xl animate-pulse" />
       
       {/* Wheel container */}
       <div 
         className={cn(
-          "relative w-[280px] h-[280px] md:w-[340px] md:h-[340px] rounded-full glass shadow-2xl transition-transform duration-[3000ms] ease-out",
+          "relative w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[340px] md:h-[340px] rounded-full glass shadow-2xl transition-transform duration-[3000ms] ease-out",
           isSpinning && "animate-[spin_3s_cubic-bezier(0.17,0.67,0.12,0.99)]"
         )}
         style={{
@@ -46,14 +46,14 @@ const NumberWheel = ({ isSpinning, onSpin, hasDrawn }: NumberWheelProps) => {
         {/* Number segments */}
         {numbers.map((num, index) => {
           const angle = index * segmentAngle - 90;
-          const radius = 100;
+          const radius = 80;
           const x = Math.cos((angle * Math.PI) / 180) * radius;
           const y = Math.sin((angle * Math.PI) / 180) * radius;
 
           return (
             <div
               key={num}
-              className="absolute font-bold text-lg md:text-xl transition-all duration-300 hover:scale-110"
+              className="absolute font-bold text-base sm:text-lg md:text-xl transition-all duration-300"
               style={{
                 left: "50%",
                 top: "50%",
@@ -68,7 +68,7 @@ const NumberWheel = ({ isSpinning, onSpin, hasDrawn }: NumberWheelProps) => {
         })}
 
         {/* Inner decorative ring */}
-        <div className="absolute inset-8 md:inset-10 rounded-full bg-gradient-to-br from-white/80 to-white/40 shadow-inner" />
+        <div className="absolute inset-6 sm:inset-8 md:inset-10 rounded-full bg-gradient-to-br from-white/80 to-white/40 shadow-inner" />
       </div>
 
       {/* Center button */}
@@ -76,9 +76,9 @@ const NumberWheel = ({ isSpinning, onSpin, hasDrawn }: NumberWheelProps) => {
         onClick={onSpin}
         disabled={isSpinning}
         className={cn(
-          "absolute w-24 h-24 md:w-28 md:h-28 rounded-full",
+          "absolute w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full",
           "bg-gradient-to-br from-primary via-purple-500 to-pink-500",
-          "text-white font-bold text-lg md:text-xl",
+          "text-white font-bold text-base sm:text-lg md:text-xl",
           "shadow-lg hover:shadow-2xl",
           "transition-all duration-300",
           "hover:scale-105 active:scale-95",

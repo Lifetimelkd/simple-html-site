@@ -47,12 +47,12 @@ const PlayerCard = ({
 
   return (
     <Card className="glass rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl">
-      <CardHeader className="pb-2">
-        <div className="flex items-center gap-3">
+      <CardHeader className="pb-2 px-3 sm:px-6 pt-3 sm:pt-6">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Avatar */}
           <div 
             className={cn(
-              "w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-2xl md:text-3xl",
+              "w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl md:text-3xl",
               "bg-gradient-to-br shadow-lg",
               avatarColors[playerIndex]
             )}
@@ -61,13 +61,13 @@ const PlayerCard = ({
           </div>
 
           {/* Name */}
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             {isEditing ? (
               <div className="flex items-center gap-2">
                 <Input
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
-                  className="h-8 text-lg font-semibold"
+                  className="h-8 text-base sm:text-lg font-semibold"
                   autoFocus
                   onKeyDown={(e) => e.key === "Enter" && handleSave()}
                 />
@@ -80,7 +80,7 @@ const PlayerCard = ({
               </div>
             ) : (
               <div className="flex items-center gap-2 group/name">
-                <h3 className="text-lg md:text-xl font-bold text-foreground">{name}</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground truncate">{name}</h3>
                 <button
                   onClick={() => setIsEditing(true)}
                   className="p-1 rounded-full opacity-0 group-hover/name:opacity-100 hover:bg-muted transition-all"
@@ -93,9 +93,9 @@ const PlayerCard = ({
         </div>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="px-3 sm:px-6 pb-3 sm:pb-6">
         {/* Number cards grid */}
-        <div className="flex flex-wrap gap-2 md:gap-3 justify-center min-h-[100px]">
+        <div className="flex flex-wrap gap-2 sm:gap-3 justify-center min-h-[80px] sm:min-h-[100px]">
           {numbers.length > 0 ? (
             numbers.map((num, idx) => (
               <NumberCard

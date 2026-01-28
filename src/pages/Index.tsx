@@ -69,24 +69,24 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen py-6 px-4 md:py-10 md:px-8">
-      <div className="max-w-6xl mx-auto space-y-8 md:space-y-12">
+    <div className="min-h-screen py-4 px-3 sm:py-6 sm:px-4 md:py-10 md:px-8">
+      <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8 md:space-y-12">
         {/* Header */}
-        <header className="text-center space-y-3">
-          <div className="flex items-center justify-center gap-2">
-            <Sparkles className="w-8 h-8 text-primary animate-pulse" />
-            <h1 className="text-4xl md:text-5xl font-bold gradient-text">
+        <header className="text-center space-y-2 sm:space-y-3">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+            <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-primary animate-pulse" />
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold gradient-text">
               数字抽取转盘
             </h1>
-            <Sparkles className="w-8 h-8 text-primary animate-pulse" />
+            <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-primary animate-pulse" />
           </div>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-lg text-muted-foreground px-2">
             点击转盘中心开始抽取，15个数字将随机分配给3位玩家
           </p>
         </header>
 
         {/* Wheel Section */}
-        <section className="flex justify-center py-4 md:py-8">
+        <section className="flex justify-center py-2 sm:py-4 md:py-8">
           <NumberWheel 
             isSpinning={isSpinning} 
             onSpin={handleSpin}
