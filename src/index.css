@@ -175,4 +175,37 @@ All colors MUST be HSL.
   .card-gradient-8 {
     background: linear-gradient(135deg, hsl(var(--rainbow-pink)), hsl(var(--rainbow-purple)));
   }
+
+  /* Long press shake animation */
+  .shake {
+    animation: shake 0.1s ease-in-out infinite;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0) scale(0.95); }
+    25% { transform: translateX(-2px) scale(0.95); }
+    75% { transform: translateX(2px) scale(0.95); }
+  }
+
+  /* Progress bar animation */
+  @keyframes progress {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+
+  /* Shatter piece animation */
+  .animate-shatter-piece {
+    animation: shatter-piece 0.6s ease-out forwards;
+  }
+
+  @keyframes shatter-piece {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--tx, 50px), var(--ty, -80px)) rotate(var(--r, 360deg)) scale(0.3);
+    }
+  }
 }
